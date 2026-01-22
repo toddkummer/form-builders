@@ -1,24 +1,23 @@
-# README
+# Form Builders, Form Helpers, and Tags
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This code shows three options for implementing a custom date picker in a Rails application:
 
-Things you may want to cover:
+- adding an application helper
+- creating a custom form builder
+- overriding the `date_field` helper
 
-* Ruby version
+Each option has a before and after branch. The after branch is just the before with the suffix `-solution`:
 
-* System dependencies
+- application-helper
+- custom-form-builder
+- override-helper
 
-* Configuration
+No spoilers here, you'll need to check out each branch to see the implementation details!
 
-* Database creation
+## Supporting Libraries
 
-* Database initialization
+This sample application uses the following libraries:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Phlex Rails: This makes it easy to focus on the form builder.
+- [Stimulus Datepicker](https://github.com/airblade/stimulus-datepicker): This is the JavaScript library used to create the date picker UI.
+- Font Awesome: This is used for the calendar icon in the date picker.
