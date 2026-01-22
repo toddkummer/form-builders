@@ -28,6 +28,8 @@ module Components
 
           javascript_importmap_tags
 
+          link rel: "stylesheet",
+               href: "https://unpkg.com/stimulus-datepicker@1.0.5/css/datepicker.css"
           stylesheet_link_tag :app, "data-turbo-track": "reload"
         end
 
