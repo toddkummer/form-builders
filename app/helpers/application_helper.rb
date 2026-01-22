@@ -6,5 +6,11 @@ module ApplicationHelper
   #   <i class="fa-regular fa-calendar" data-datepicker-target="toggle"></i>
   # </div>
   def date_field(object_name, method, options = {})
+    return super if options.delete(:skip_datepicker)
+
+    tag.div(data: { controller: "datepicker" }) do
+      text_field(object_name, method, options.merge(data: { datepicker_target: "input" })) +
+      tag.i("", class: "fa-regular fa-calendar", data: { datepicker_target: "toggle" })
+    end
   end
 end
