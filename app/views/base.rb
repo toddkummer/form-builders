@@ -1,12 +1,21 @@
 # frozen_string_literal: true
 
-class Views::Base < Components::Base
-  # The `Views::Base` is an abstract class for all your views.
+module Views
+  class Base < Components::Base
+    include Phlex::Rails::Helpers::FormWith
 
-  # By default, it inherits from `Components::Base`, but you
-  # can change that to `Phlex::HTML` if you want to keep views and
-  # components independent.
+    PageInfo = Data.define(:title)
 
-  # More caching options at https://www.phlex.fun/components/caching
-  def cache_store = Rails.cache
+    def around_template
+      render layout.new(page_info) do
+        main { super }
+      end
+    end
+
+    def page_info
+      PageInfo.new(
+        title: page_title
+      )
+    end
+  end
 end

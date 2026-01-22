@@ -12,11 +12,12 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
+    render Views::Blogs::Editor.new(Blog.new)
   end
 
   # GET /blogs/1/edit
   def edit
+    render Views::Blogs::Editor.new(@blog)
   end
 
   # POST /blogs
