@@ -8,5 +8,10 @@ class CustomFormBuilder < ActionView::Helpers::FormBuilder
   #   <i class="fa-regular fa-calendar" data-datepicker-target="toggle"></i>
   # </div>
   def date_field(method, options = {})
+    @template.content_tag(:div, data: { controller: "datepicker" }) do
+      field =  text_field(method, options.merge(data: { datepicker_target: "input" }))
+      icon =  @template.content_tag(:i, "", class: "fa-regular fa-calendar", data: { datepicker_target: "toggle" })
+      field.concat(icon)
+    end
   end
 end

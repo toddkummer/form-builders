@@ -15,7 +15,7 @@ module Views
       def view_template
         h1 { "Editing Blog" }
 
-        form_with(model: @blog) do |form|
+        form_with(model: @blog, builder: CustomFormBuilder) do |form|
           div do
             form.label :title, style: "display: block"
             form.text_field :title
