@@ -4,6 +4,7 @@ module Views
   module Blogs
     class Editor < Views::Base
       include Phlex::Rails::Helpers::LinkTo
+      register_output_helper :date_picker
 
       def initialize(blog)
         @blog = blog
@@ -28,7 +29,7 @@ module Views
 
           div do
             form.label :published_at, style: "display: block"
-            form.date_field :published_at
+            date_picker form, :published_at
           end
 
           div do
