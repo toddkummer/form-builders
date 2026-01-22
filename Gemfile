@@ -13,6 +13,7 @@ gem "puma", ">= 5.0"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 gem "importmap-rails", "~> 2.2"
+gem "phlex-rails", "~> 2.4"
 gem "stimulus-rails", "~> 1.3"
 
 group :development, :test do
